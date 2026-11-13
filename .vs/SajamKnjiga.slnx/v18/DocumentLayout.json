@@ -1,0 +1,84 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Win 11\\OneDrive\\Desktop\\SajamKnjiga\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E50D260D-D5A7-ACC2-3656-8B50334DA120}|SajamKnjiga.Cli\\SajamKnjiga.Cli.csproj|c:\\users\\win 11\\onedrive\\desktop\\sajamknjiga\\sajamknjiga.cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E50D260D-D5A7-ACC2-3656-8B50334DA120}|SajamKnjiga.Cli\\SajamKnjiga.Cli.csproj|solutionrelative:sajamknjiga.cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B50887B4-3A56-E334-C17C-DE7F14EF313A}|SajamKnjiga.GUI\\SajamKnjiga.GUI.csproj|c:\\users\\win 11\\onedrive\\desktop\\sajamknjiga\\sajamknjiga.gui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B50887B4-3A56-E334-C17C-DE7F14EF313A}|SajamKnjiga.GUI\\SajamKnjiga.GUI.csproj|solutionrelative:sajamknjiga.gui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B50887B4-3A56-E334-C17C-DE7F14EF313A}|SajamKnjiga.GUI\\SajamKnjiga.GUI.csproj|c:\\users\\win 11\\onedrive\\desktop\\sajamknjiga\\sajamknjiga.gui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B50887B4-3A56-E334-C17C-DE7F14EF313A}|SajamKnjiga.GUI\\SajamKnjiga.GUI.csproj|solutionrelative:sajamknjiga.gui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{598ED8A9-F9C1-4F74-31B8-611705A38261}|SajamKnjiga.Core\\SajamKnjiga.Core.csproj|c:\\users\\win 11\\onedrive\\desktop\\sajamknjiga\\sajamknjiga.core\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{598ED8A9-F9C1-4F74-31B8-611705A38261}|SajamKnjiga.Core\\SajamKnjiga.Core.csproj|solutionrelative:sajamknjiga.core\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Win 11\\OneDrive\\Desktop\\SajamKnjiga\\SajamKnjiga.Cli\\Program.cs",
+              "RelativeDocumentMoniker": "SajamKnjiga.Cli\\Program.cs",
+              "ToolTip": "C:\\Users\\Win 11\\OneDrive\\Desktop\\SajamKnjiga\\SajamKnjiga.Cli\\Program.cs",
+              "RelativeToolTip": "SajamKnjiga.Cli\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-13T16:48:18.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Win 11\\OneDrive\\Desktop\\SajamKnjiga\\SajamKnjiga.GUI\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "SajamKnjiga.GUI\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Win 11\\OneDrive\\Desktop\\SajamKnjiga\\SajamKnjiga.GUI\\MainWindow.xaml",
+              "RelativeToolTip": "SajamKnjiga.GUI\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-13T16:47:04.358Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Win 11\\OneDrive\\Desktop\\SajamKnjiga\\SajamKnjiga.GUI\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SajamKnjiga.GUI\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Win 11\\OneDrive\\Desktop\\SajamKnjiga\\SajamKnjiga.GUI\\MainWindow.xaml.cs",
+              "RelativeToolTip": "SajamKnjiga.GUI\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-13T16:47:03.581Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\Win 11\\OneDrive\\Desktop\\SajamKnjiga\\SajamKnjiga.Core\\Class1.cs",
+              "RelativeDocumentMoniker": "SajamKnjiga.Core\\Class1.cs",
+              "ToolTip": "C:\\Users\\Win 11\\OneDrive\\Desktop\\SajamKnjiga\\SajamKnjiga.Core\\Class1.cs",
+              "RelativeToolTip": "SajamKnjiga.Core\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-13T16:45:38.259Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
