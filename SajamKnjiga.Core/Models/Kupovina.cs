@@ -12,5 +12,26 @@ namespace SajamKnjiga.Core.Models
         public int Ocjena { get; set; }
         public string Komentar { get; set; } = string.Empty;
 
+
+        public Kupovina() {  }
+    
+        public Kupovina(Posjetilac posjetilacObj, Knjiga knjigaObj, DateTime datumKupovine, int ocjena, string komentar)
+        {
+            PosjetilacObj = posjetilacObj;
+            KnjigaObj = knjigaObj;
+            DatumKupovine = datumKupovine;
+            Ocjena = ocjena;
+            Komentar = komentar;
+        }
+
+        public override string ToString()
+        {
+            return $"KUPOVINA \n" +
+                   $"Posjetilac  : {PosjetilacObj} \n" +
+                   $"Knjiga : {KnjigaObj} \n" +
+                   $"Datum kupovine : {DatumKupovine} \n" +
+                   $"Ocjena : {Ocjena} \n" +
+                   $"Komentar : {Komentar} \n";
+        }
     }
 }

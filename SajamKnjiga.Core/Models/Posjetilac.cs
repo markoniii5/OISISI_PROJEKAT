@@ -20,6 +20,38 @@ namespace SajamKnjiga.Core.Models
         public List<Kupovina> KupljeneKnjige { get; set; } = new();
         public List<Knjiga> Zelje { get; set; } = new();
 
+        public Posjetilac() { }
+        public Posjetilac(string ime, string prezime, DateTime datumRodjenja, Adresa adresaObj, string kontaktTelefon, string email, string brojClanskeKarte, int trenutnaGodinaClanstva, StatusPosjetioca status, double prosecnaOcenaRecenzija, List<Kupovina> kupljeneKnjige, List<Knjiga> zelje)
+        {
+            Ime = ime;
+            Prezime = prezime;
+            DatumRodjenja = datumRodjenja;
+            AdresaObj = adresaObj;
+            KontaktTelefon = kontaktTelefon;
+            Email = email;
+            BrojClanskeKarte = brojClanskeKarte;
+            TrenutnaGodinaClanstva = trenutnaGodinaClanstva;
+            Status = status;
+            ProsecnaOcenaRecenzija = prosecnaOcenaRecenzija;
+            KupljeneKnjige = kupljeneKnjige;
+            Zelje = zelje;
+        }
 
+        public override string ToString()
+        {
+            return $"POSJETILAC \n" +
+          $"Ime: {Ime} \n" +
+          $"Prezime: {Prezime} \n" +
+          $"Datum rođenja: {DatumRodjenja} \n" +
+          $"Kontakt telefon: {KontaktTelefon} \n" +
+          $"Email: {Email} \n" +
+          $"Broj članske karte: {BrojClanskeKarte} \n" +
+          $"Trenutna godina članstva: {TrenutnaGodinaClanstva} \n" +
+          $"Status: {Status} \n" +
+          $"Prosječna ocjena recenzija: {ProsecnaOcenaRecenzija} \n" +
+          $"Adresa: {AdresaObj} \n" +
+          $"Kupljene knjige: \n {string.Join( "\n", KupljeneKnjige)} \n" +
+          $"Lista želja: \n {string.Join( "\n", Zelje)}";
+        }
     }
 }
