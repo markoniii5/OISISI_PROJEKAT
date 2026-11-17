@@ -8,8 +8,9 @@ namespace SajamKnjiga.Core.Models
     {
         public int Sifra { get; set; }
         public string Naziv { get; set; } = string.Empty;
-        public string SefIzdavaca {  get; set; } = string.Empty;
-
-
+        public Autor SefIzdavaca {  get; set; } = null!;
+        public List<Autor> SpisakAutora { get; set; } = new();  
+        public List<Knjiga> SpisakKnjiga {  get; set; } = new();
+        
     }
 }
