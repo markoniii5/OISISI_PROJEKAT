@@ -48,8 +48,8 @@ namespace SajamKnjiga.Core.Models
                 Isbn,
                 Naziv,
                 Zanr,
-                GodinaIzdanja.ToString(CultureInfo.InvariantCulture),
-                Cena.ToString(),
+                GodinaIzdanja.ToString(),
+                Cena.ToString(CultureInfo.InvariantCulture),
                 BrojStrana.ToString(),
                 IzdavacId?.ToString()  ?? string.Empty
             };
