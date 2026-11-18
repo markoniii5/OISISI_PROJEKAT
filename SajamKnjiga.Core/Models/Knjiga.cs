@@ -20,7 +20,7 @@ namespace SajamKnjiga.Core.Models
         public Izdavac? Izdavac { get; set; }
 
         public List<Posjetilac> Kupci { get; set; } = new List<Posjetilac>();
-        public List<Posjetilac> ListaZeljaIds { get; set; } = new List<Posjetilac>();
+        public List<Posjetilac> ListaZelja { get; set; } = new List<Posjetilac>();
 
         public Knjiga() { }
 
