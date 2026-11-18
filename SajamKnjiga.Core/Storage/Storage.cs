@@ -1,4 +1,5 @@
 ﻿// Preuzeto sa vježbi: Termin 3 - Kolekcije i serijalizacija, primjer CRUDExample (Storage/Storage.cs)
+// Izmjenjeno: putanja se pravi pomoću Path.DirectorySeparatorChar i pravi se Data folder ako ne postoji
 using SajamKnjiga.Core.Serialization;
 
 namespace SajamKnjiga.Core.Storage
@@ -18,6 +19,8 @@ namespace SajamKnjiga.Core.Storage
 
         public List<T> Load()
         {
+            // ukoliko fajl ne postoji napravi novi fajl i
+            // zatvori stream za pisanje u fajl
             if (!File.Exists(_filePath))
             {
                 FileStream fs = File.Create(_filePath);
