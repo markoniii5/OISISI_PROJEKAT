@@ -38,7 +38,7 @@ public class AutorDAO
         oldAutor.Ime = Autor.Ime;
         oldAutor.Prezime = Autor.Prezime;
         oldAutor.DatumRodjenja = Autor.DatumRodjenja;
-        oldAutor.Adresa = Autor.Adresa;
+        oldAutor.AdresaId = Autor.AdresaId;
         oldAutor.Telefon = Autor.Telefon;
         oldAutor.Email = Autor.Email;
         oldAutor.BrojLicneKarte = Autor.BrojLicneKarte;

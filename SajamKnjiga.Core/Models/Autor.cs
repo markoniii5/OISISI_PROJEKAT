@@ -12,7 +12,8 @@ namespace SajamKnjiga.Core.Models
         public string Ime { get; set; } = string.Empty;
         public string Prezime { get; set; } = string.Empty;
         public DateTime DatumRodjenja { get; set; }
-        public Adresa Adresa { get; set; } = new Adresa();
+        public int AdresaId { get; set; }
+        public Adresa? Adresa { get; set; }
         public string Telefon { get; set; } = string.Empty;
         public string Email {  get; set; } = string.Empty;
         public string BrojLicneKarte { get; set; } = string.Empty;
@@ -21,13 +22,13 @@ namespace SajamKnjiga.Core.Models
 
         public Autor() { }
 
-        public Autor(int id, string ime, string prezime, DateTime datumRodjenja, Adresa adresa, string telefon, string email, string brojLicneKarte, int godineIskustva)
+        public Autor(int id, string ime, string prezime, DateTime datumRodjenja, int adresaId, string telefon, string email, string brojLicneKarte, int godineIskustva)
         {
             Id = id;
             Ime = ime;
             Prezime = prezime;
             DatumRodjenja = datumRodjenja;
-            Adresa = adresa;
+            AdresaId = adresaId;
             Telefon = telefon;
             Email = email;
             BrojLicneKarte = brojLicneKarte;
@@ -47,10 +48,7 @@ namespace SajamKnjiga.Core.Models
                 Ime,
                 Prezime,
                 DatumRodjenja.ToString("dd.MM.yyyy", CultureInfo.InvariantCulture),
-                Adresa.Ulica,
-                Adresa.Broj,
-                Adresa.Grad,
-                Adresa.Drzava,
+                AdresaId.ToString(),
                 Telefon,
                 Email,
                 BrojLicneKarte,
@@ -65,11 +63,11 @@ namespace SajamKnjiga.Core.Models
             Ime = values[1];
             Prezime = values[2];
             DatumRodjenja = DateTime.ParseExact(values[3], "dd.MM.yyyy", CultureInfo.InvariantCulture);
-            Adresa = new Adresa(values[4], values[5], values[6], values[7]);
-            Telefon = values[8];
-            Email = values[9];
-            BrojLicneKarte = values[10];
-            GodineIskustva = int.Parse(values[11]);
+            AdresaId = int.Parse(values[4]);
+            Telefon = values[5];
+            Email = values[6];
+            BrojLicneKarte = values[7];
+            GodineIskustva = int.Parse(values[8]);
         }
     }
 }
