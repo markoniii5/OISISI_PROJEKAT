@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using SajamKnjiga.Core.Serialization;
 
 namespace SajamKnjiga.Core.Models
 {
-    public class Posjetilac
+    public class Posjetilac : ISerializable
     {
         public string Ime { get; set; } = string.Empty;
         public string Prezime { get; set; } = string.Empty;
         public DateTime DatumRodjenja { get; set; }
-        public Adresa AdresaObj { get; set; } = null!;
+        public Adresa? AdresaObj { get; set; }
         public string KontaktTelefon { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         public string BrojClanskeKarte { get; set; } = string.Empty;
@@ -19,9 +20,13 @@ namespace SajamKnjiga.Core.Models
         public double ProsecnaOcenaRecenzija { get; set; }
         public List<Kupovina> KupljeneKnjige { get; set; } = new();
         public List<Knjiga> Zelje { get; set; } = new();
+        public int Id { get; set; }
+        public int AdresaId { get; set; }
+
+
 
         public Posjetilac() { }
-        public Posjetilac(string ime, string prezime, DateTime datumRodjenja, Adresa adresaObj, string kontaktTelefon, string email, string brojClanskeKarte, int trenutnaGodinaClanstva, StatusPosjetioca status, double prosecnaOcenaRecenzija, List<Kupovina> kupljeneKnjige, List<Knjiga> zelje)
+        public Posjetilac(string ime, string prezime, DateTime datumRodjenja, Adresa adresaObj, string kontaktTelefon, string email, string brojClanskeKarte, int trenutnaGodinaClanstva, StatusPosjetioca status, double prosecnaOcenaRecenzija, List<Kupovina> kupljeneKnjige, List<Knjiga> zelje, int id, int adid)
         {
             Ime = ime;
             Prezime = prezime;
@@ -50,8 +55,49 @@ namespace SajamKnjiga.Core.Models
           $"Status: {Status} \n" +
           $"Prosječna ocjena recenzija: {ProsecnaOcenaRecenzija} \n" +
           $"Adresa: {AdresaObj} \n" +
-          $"Kupljene knjige: \n {string.Join( "\n", KupljeneKnjige)} \n" +
-          $"Lista želja: \n {string.Join( "\n", Zelje)}";
+          $"Kupljene knjige: \n {string.Join("\n", KupljeneKnjige)} \n" +
+          $"Lista želja: \n {string.Join("\n", Zelje)}";
         }
+    
+
+
+    public string[] ToCSV()
+        {
+            return new string[]
+            {
+        Id.ToString(),
+        Ime,
+        Prezime,
+        DatumRodjenja.ToString("dd.MM.yyyy", CultureInfo.InvariantCulture),
+        AdresaId.ToString(),
+        KontaktTelefon,
+        Email,
+        BrojClanskeKarte,
+        TrenutnaGodinaClanstva.ToString(),
+        Status.ToString(),
+        ProsecnaOcenaRecenzija.ToString(CultureInfo.InvariantCulture)
+            };
+        }
+
+        public void FromCSV(string[] values)
+        {
+            Id = int.Parse(values[0]);
+            Ime = values[1];
+            Prezime = values[2];
+            DatumRodjenja = DateTime.ParseExact(
+                values[3],
+                "dd.MM.yyyy",
+                CultureInfo.InvariantCulture);
+            AdresaId = int.Parse(values[4]);
+            KontaktTelefon = values[5];
+            Email = values[6];
+            BrojClanskeKarte = values[7];
+            TrenutnaGodinaClanstva = int.Parse(values[8]);
+            Status = Enum.Parse<StatusPosjetioca>(values[9]);
+            ProsecnaOcenaRecenzija = double.Parse(
+                values[10],
+                CultureInfo.InvariantCulture);
+        }
+
     }
 }
