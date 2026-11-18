@@ -6,7 +6,7 @@ using SajamKnjiga.Core.Serialization;
 
 namespace SajamKnjiga.Core.Models
 {
-    public class Knjiga
+    public class Knjiga : ISerializable
     {
         public int Id { get; set; }
         public string Isbn { get; set; } = string.Empty;
