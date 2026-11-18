@@ -17,7 +17,7 @@ namespace SajamKnjiga.Core.Models
         public string Email {  get; set; } = string.Empty;
         public string BrojLicneKarte { get; set; } = string.Empty;
         public int GodineIskustva { get; set; }
-        public List<int> KnjigeIds { get; set; } = new List<int>();
+        public List<Knjiga> Knjige { get; set; } = new List<Knjiga>();
 
         public Autor() { }
 

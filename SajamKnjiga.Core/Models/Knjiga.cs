@@ -15,11 +15,12 @@ namespace SajamKnjiga.Core.Models
         public int GodinaIzdanja { get; set; }
         public decimal Cena {  get; set; }
         public int BrojStrana { get; set; }
-        public List<int> AutoriIds { get; set; } = new List<int>();
+        public List<Autor> Autori { get; set; } = new List<Autor>();
         public int? IzdavacId { get; set; }
+        public Izdavac? Izdavac { get; set; }
 
-        public List<int> KupciIds { get; set; } = new List<int>();
-        public List<int> ListaZeljaIds { get; set; } = new List<int>();
+        public List<Posjetilac> Kupci { get; set; } = new List<Posjetilac>();
+        public List<Posjetilac> ListaZeljaIds { get; set; } = new List<Posjetilac>();
 
         public Knjiga() { }
 
