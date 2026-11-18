@@ -44,7 +44,7 @@ public class AdresaDAO
         return oldAdresa;
     }
 
-    public Adresa? RemoveAdresas(int id)
+    public Adresa? RemoveAdresa(int id)
     {
         Adresa? adresa = GetAdresaById(id);
         if (adresa == null) return null;

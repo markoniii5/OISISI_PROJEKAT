@@ -26,7 +26,7 @@ namespace SajamKnjiga.Core.Models
 
         public override string ToString()
         {
-            return $"{Ulica} {Broj}, {Grad}, {Drzava}";
+            return $"{Id} | {Ulica} {Broj}, {Grad}, {Drzava}";
         }
 
         public string[] ToCSV()
