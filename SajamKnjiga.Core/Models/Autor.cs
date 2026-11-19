@@ -22,9 +22,8 @@ namespace SajamKnjiga.Core.Models
 
         public Autor() { }
 
-        public Autor(int id, string ime, string prezime, DateTime datumRodjenja, int adresaId, string telefon, string email, string brojLicneKarte, int godineIskustva)
+        public Autor(string ime, string prezime, DateTime datumRodjenja, int adresaId, string telefon, string email, string brojLicneKarte, int godineIskustva)
         {
-            Id = id;
             Ime = ime;
             Prezime = prezime;
             DatumRodjenja = datumRodjenja;
@@ -37,7 +36,7 @@ namespace SajamKnjiga.Core.Models
 
         public override string ToString()
         {
-            return $"{Id} | {Ime} {Prezime} | LK: {BrojLicneKarte} | {DatumRodjenja:dd.MM.yyyy} | {Email}";
+            return $"{Id} | {Ime} {Prezime}, {DatumRodjenja:dd.MM.yyyy}, {AdresaId}, {Telefon}, {Email}, {BrojLicneKarte}, {GodineIskustva}";
         }
 
         public string[] ToCSV()

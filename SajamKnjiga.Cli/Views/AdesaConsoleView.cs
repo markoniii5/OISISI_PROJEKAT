@@ -84,16 +84,16 @@ namespace SajamKnjiga.Cli.Views
 
         private Adresa InputAdresa()
         {
-            Console.WriteLine("Ulica: ");
+            Console.Write("Ulica: ");
             string ulica = ConsoleViewUtils.SafeInputString();
 
-            Console.WriteLine("Broj: ");
+            Console.Write("Broj: ");
             string broj = ConsoleViewUtils.SafeInputString();
 
-            Console.WriteLine("Grad: ");
+            Console.Write("Grad: ");
             string grad = ConsoleViewUtils.SafeInputString();
 
-            Console.WriteLine("Država: ");
+            Console.Write("Država: ");
             string država = ConsoleViewUtils.SafeInputString();
 
             return new Adresa(ulica, broj, grad, država);
@@ -113,13 +113,13 @@ namespace SajamKnjiga.Cli.Views
                 return;
             }
 
-            Console.WriteLine("Adresa je izmjenjena.");
+            Console.WriteLine("Adresa je izmijenjena.");
 
         }
 
         private int InputId()
         {
-            Console.WriteLine("Unesite ID adrese: ");
+            Console.Write("Unesite ID adrese: ");
             return ConsoleViewUtils.SafeInputInt();
         }
 
@@ -135,7 +135,7 @@ namespace SajamKnjiga.Cli.Views
                 return;
             }
 
-            Console.WriteLine("Adresa je obrisana.");
+            Console.WriteLine($"Adresa je obrisana: {removedAdresa.Id}");
         }
     }
 }
