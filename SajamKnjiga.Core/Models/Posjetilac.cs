@@ -26,7 +26,7 @@ namespace SajamKnjiga.Core.Models
 
 
         public Posjetilac() { }
-        public Posjetilac(string ime, string prezime, DateTime datumRodjenja, Adresa adresaObj, string kontaktTelefon, string email, string brojClanskeKarte, int trenutnaGodinaClanstva, StatusPosjetioca status, double prosecnaOcenaRecenzija, List<Kupovina> kupljeneKnjige, List<Knjiga> zelje, int id, int adid)
+        public Posjetilac(string ime, string prezime, DateTime datumRodjenja, Adresa adresaObj, string kontaktTelefon, string email, string brojClanskeKarte, int trenutnaGodinaClanstva, StatusPosjetioca status, double prosecnaOcenaRecenzija, List<Kupovina> kupljeneKnjige, List<Knjiga> zelje)
         {
             Ime = ime;
             Prezime = prezime;
@@ -39,7 +39,9 @@ namespace SajamKnjiga.Core.Models
             Status = status;
             ProsecnaOcenaRecenzija = prosecnaOcenaRecenzija;
             KupljeneKnjige = kupljeneKnjige;
-            Zelje = zelje;
+            Zelje = zelje; 
+            AdresaId = adresaObj.Id;
+
         }
 
         public override string ToString()
