@@ -41,6 +41,7 @@ public class KnjigaDAO
         oldKnjiga.GodinaIzdanja = knjiga.GodinaIzdanja;
         oldKnjiga.Cena = knjiga.Cena;
         oldKnjiga.BrojStrana = knjiga.BrojStrana;
+        oldKnjiga.IzdavacId = knjiga.IzdavacId;
 
         _storage.Save(_knjige);
         return oldKnjiga;

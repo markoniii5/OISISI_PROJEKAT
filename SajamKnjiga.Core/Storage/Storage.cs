@@ -1,5 +1,5 @@
 ﻿// Preuzeto sa vježbi: Termin 3 - Kolekcije i serijalizacija, primjer CRUDExample (Storage/Storage.cs)
-// Izmjenjeno: putanja se pravi pomoću Path.DirectorySeparatorChar i pravi se Data folder ako ne postoji
+// Izmijenjeno: putanja se pravi pomoću Path.DirectorySeparatorChar i pravi se Data folder ako ne postoji
 using SajamKnjiga.Core.Serialization;
 
 namespace SajamKnjiga.Core.Storage
