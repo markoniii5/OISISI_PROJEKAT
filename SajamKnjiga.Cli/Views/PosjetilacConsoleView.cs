@@ -13,13 +13,17 @@ namespace SajamKnjiga.Cli.Views
     {
         private readonly PosjetilacDAO _posjetilacDAO;
         private readonly AdresaDAO _adresaDAO;
+        private readonly KupovinaDAO _kupovinaDAO;
+
 
         public PosjetilacConsoleView(
-            PosjetilacDAO posjetilacDAO,
-            AdresaDAO adresaDAO)
+             PosjetilacDAO posjetilacDAO,
+             AdresaDAO adresaDAO,
+             KupovinaDAO kupovinaDAO)
         {
             _posjetilacDAO = posjetilacDAO;
             _adresaDAO = adresaDAO;
+            _kupovinaDAO = kupovinaDAO;
         }
 
         public void RunMenu()
@@ -218,6 +222,11 @@ namespace SajamKnjiga.Cli.Views
         private void RemovePosjetilac()
         {
             int id = InputId();
+            if (_kupovinaDAO.GetAllKupovine().Exists(k => k.PosjetilacId == id))
+            {
+                Console.WriteLine("Posjetilac ne može biti obrisan jer ima evidentirane kupovine.");
+                return;
+            }
             Posjetilac? obrisani = _posjetilacDAO.RemovePosjetilac(id);
 
             if (obrisani is null)

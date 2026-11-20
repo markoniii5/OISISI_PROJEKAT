@@ -39,6 +39,7 @@ namespace SajamKnjiga.Core.DAO
             postojeci.Sifra = izdavac.Sifra;
             postojeci.Naziv = izdavac.Naziv;
             postojeci.SefIzdavacaId = izdavac.SefIzdavacaId;
+            postojeci.SefIzdavaca = izdavac.SefIzdavaca;
 
             _storage.Save(_izdavaci);
             return postojeci;
