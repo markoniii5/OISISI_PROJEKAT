@@ -6,10 +6,15 @@ namespace SajamKnjiga.Cli.Views
     class AdresaConsoleView
     {
         private readonly AdresaDAO _adresaDAO;
+        private readonly AutorDAO _autorDAO;
+        private readonly PosjetilacDAO _posjetilacDAO;
 
-        public AdresaConsoleView(AdresaDAO adresaDAO)
+
+        public AdresaConsoleView(AdresaDAO adresaDAO, AutorDAO autorDAO, PosjetilacDAO posjetilacDAO)
         {
             _adresaDAO = adresaDAO;
+            _autorDAO = autorDAO;
+            _posjetilacDAO = posjetilacDAO;
         }
 
         public void RunMenu()
@@ -127,11 +132,20 @@ namespace SajamKnjiga.Cli.Views
         {
             int id = InputId();
 
+            bool koristiAutor = _autorDAO.GetAllAutori().Exists(a => a.AdresaId == id);
+            bool koristiPosjetilac = _posjetilacDAO.GetAllPosjetioci().Exists(p => p.AdresaId == id);
+
             Adresa? removedAdresa = _adresaDAO.RemoveAdresa(id);
             
             if(removedAdresa == null)
             {
                 Console.WriteLine("Adresa nije pronađena.");
+                return;
+            }
+
+            if (koristiAutor || koristiPosjetilac)
+            {
+                Console.WriteLine("Adresa se ne može obrisati jer je koristi autor ili posjetilac.");
                 return;
             }
 
