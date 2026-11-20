@@ -17,7 +17,7 @@ namespace SajamKnjiga.Core.Models
         public int BrojStrana { get; set; }
         public List<Autor> Autori { get; set; } = new List<Autor>();
         public int IzdavacId { get; set; }
-        public Izdavac Izdavac { get; set; }
+        public Izdavac? Izdavac { get; set; }
 
         public List<Posjetilac> Kupci { get; set; } = new List<Posjetilac>();
         public List<Posjetilac> ListaZelja { get; set; } = new List<Posjetilac>();
