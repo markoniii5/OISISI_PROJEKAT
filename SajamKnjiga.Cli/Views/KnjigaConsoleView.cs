@@ -73,7 +73,7 @@ namespace SajamKnjiga.Cli.Views
                 return;
             }
 
-            Console.WriteLine("\nID | ISBN | Naziv | Žanr | Godina izdanja | Cijena | Broj strana | Izdavač ID");
+            Console.WriteLine("\nID | ISBN, Naziv, Žanr, Godina izdanja, Cijena, Broj strana, Izdavač ID");
 
             foreach(Knjiga knjiga in knjige)
             {
