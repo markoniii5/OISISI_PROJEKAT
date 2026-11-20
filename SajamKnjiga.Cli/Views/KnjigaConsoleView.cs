@@ -7,10 +7,15 @@ namespace SajamKnjiga.Cli.Views
     {
         private readonly KnjigaDAO _knjigaDAO;
         private readonly IzdavacDAO _izdavacDAO;
-        public KnjigaConsoleView(KnjigaDAO knjigaDAO, IzdavacDAO izdavacDAO)
+        private readonly KupovinaDAO _kupvinaDAO;
+        private readonly AutorKnjigaDAO _autorKnjigaDAO;
+
+        public KnjigaConsoleView(KnjigaDAO knjigaDAO, IzdavacDAO izdavacDAO, KupovinaDAO kupvinaDAO, AutorKnjigaDAO autorKnjigaDAO)
         {
             _knjigaDAO = knjigaDAO;
             _izdavacDAO = izdavacDAO;
+            _kupvinaDAO = kupvinaDAO;
+            _autorKnjigaDAO = autorKnjigaDAO;
         }
 
         public void RunMenu()
@@ -221,6 +226,14 @@ namespace SajamKnjiga.Cli.Views
                 Console.WriteLine("Knjiga nije pronađena.");
                 return;
             }
+
+            if(_kupvinaDAO.GetAllKupovine().Exists(k => k.KnjigaId == id))
+            {
+                Console.WriteLine("Knjiga se ne može obrisati jer postoje njene kupovine.");
+                return;
+            }
+
+            _autorKnjigaDAO.RemoveAllByKnjiga(id);
 
             Console.WriteLine($"Knjiga je obrisana: {removedKnjiga.Naziv}");
         }

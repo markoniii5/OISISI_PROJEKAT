@@ -1,6 +1,9 @@
 ﻿using System.Text;
 using SajamKnjiga.Cli.Views;
 using SajamKnjiga.Core.DAO;
+using static System.Net.Mime.MediaTypeNames;
+
+
 using SajamKnjiga.Core.Models;
 
 // Omogućava prikaz slova č, ć, š, ž, đ
@@ -11,13 +14,18 @@ AdresaDAO adresaDAO = new AdresaDAO();
 AutorDAO autorDAO = new AutorDAO();
 KnjigaDAO knjigaDAO = new KnjigaDAO();
 IzdavacDAO izdavacDAO = new IzdavacDAO();
+AutorKnjigaDAO autorKnjigaDAO = new AutorKnjigaDAO();
 PosjetilacDAO posjetilacDAO = new PosjetilacDAO();
 KupovinaDAO kupovinaDAO = new KupovinaDAO();
 
-AdresaConsoleView adresaView = new AdresaConsoleView(adresaDAO);
-AutorConsoleView autorView = new AutorConsoleView(autorDAO, adresaDAO);
-KnjigaConsoleView knjigaView = new KnjigaConsoleView(knjigaDAO, izdavacDAO);
-PosjetilacConsoleView posjetilacView = new PosjetilacConsoleView(posjetilacDAO, adresaDAO);
+AdresaConsoleView adresaView =
+    new AdresaConsoleView(adresaDAO, autorDAO, posjetilacDAO);
+AutorConsoleView autorView =
+    new AutorConsoleView(autorDAO, adresaDAO, izdavacDAO, autorKnjigaDAO);
+KnjigaConsoleView knjigaView =
+    new KnjigaConsoleView(knjigaDAO, izdavacDAO, kupovinaDAO, autorKnjigaDAO);
+PosjetilacConsoleView posjetilacView =
+    new PosjetilacConsoleView(posjetilacDAO, adresaDAO);
 
 while (true)
 {

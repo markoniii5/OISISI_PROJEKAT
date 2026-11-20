@@ -7,11 +7,15 @@ namespace SajamKnjiga.Cli.Views
     {
         private readonly AutorDAO _autorDAO;
         private readonly AdresaDAO _adresaDAO;
+        private readonly IzdavacDAO _izdavacDAO;
+        private readonly AutorKnjigaDAO _autorKnjigaDAO;
 
-        public AutorConsoleView(AutorDAO autorDAO, AdresaDAO adresaDAO)
+        public AutorConsoleView(AutorDAO autorDAO, AdresaDAO adresaDAO, IzdavacDAO izdavacDAO, AutorKnjigaDAO autorKnjigaDAO)
         {
             _autorDAO = autorDAO;
             _adresaDAO = adresaDAO;
+            _izdavacDAO = izdavacDAO;
+            _autorKnjigaDAO = autorKnjigaDAO;
         }
 
         public void RunMenu()
@@ -196,6 +200,14 @@ namespace SajamKnjiga.Cli.Views
                 Console.WriteLine("Autor nije pronađen.");
                 return;
             }
+
+            if(_izdavacDAO.GetAllIzdavaci().Exists(i => i.SefIzdavacaId == id))
+            {
+                Console.WriteLine("Autor se ne može obrisati jer je šef izdavača.");
+                return;
+            }
+
+            _autorKnjigaDAO.RemoveAllByAutor(id);
 
             Console.WriteLine($"Autor je obrisan: {removedAutor.Ime} {removedAutor.Ime}");
         }
