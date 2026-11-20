@@ -11,11 +11,13 @@ AdresaDAO adresaDAO = new AdresaDAO();
 AutorDAO autorDAO = new AutorDAO();
 KnjigaDAO knjigaDAO = new KnjigaDAO();
 IzdavacDAO izdavacDAO = new IzdavacDAO();
+PosjetilacDAO posjetilacDAO = new PosjetilacDAO();
+KupovinaDAO kupovinaDAO = new KupovinaDAO();
 
 AdresaConsoleView adresaView = new AdresaConsoleView(adresaDAO);
 AutorConsoleView autorView = new AutorConsoleView(autorDAO, adresaDAO);
 KnjigaConsoleView knjigaView = new KnjigaConsoleView(knjigaDAO, izdavacDAO);
-
+PosjetilacConsoleView posjetilacView = new PosjetilacConsoleView(posjetilacDAO, adresaDAO);
 
 while (true)
 {
@@ -24,6 +26,7 @@ while (true)
     Console.WriteLine("1: Adrese");
     Console.WriteLine("2: Autori");
     Console.WriteLine("3: Knjige");
+    Console.WriteLine("4: Posjetioci");
     Console.WriteLine("0: Izlaz");
 
     string izbor = Console.ReadLine() ?? "0";
@@ -40,6 +43,9 @@ while (true)
             break;
         case "3":
             knjigaView.RunMenu();
+            break;
+        case "4":
+            posjetilacView.RunMenu();
             break;
         default:
             Console.WriteLine("Nepostojeća opcija.");
