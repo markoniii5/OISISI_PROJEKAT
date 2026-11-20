@@ -18,7 +18,13 @@ Svaki tip entiteta ima svoj fajl, a vrijednosti u jednom redu su odvojene znakom
 
 ## Podjela posla
 
-### Student 1 – [Marko Nikolić]
+### Student 1 – Marko Nikolić
+
+Modeli: Posjetilac, Kupovina, Izdavac
+Serijalizacija i čuvanje podataka: CSV serijalizacija modela Posjetilac, Kupovina i Izdavac
+DAO : IzdavacDAO, PosjetilacDAO, KupovinaDAO
+Konzola: PosetilacConsoleView, IzdavacConsoleView, KupovinaConsoleView
+Glavni meni : Program.cs
 
 ### Student 2 – Nikola Marčeta
 
